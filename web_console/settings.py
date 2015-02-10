@@ -1,5 +1,5 @@
 """
-Django settings for angel project.
+Django settings for console project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -46,9 +46,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'angel.urls'
+ROOT_URLCONF = 'web_console.urls'
 
-WSGI_APPLICATION = 'angel.wsgi.application'
+WSGI_APPLICATION = 'web_console.wsgi.application'
 
 
 # Database
