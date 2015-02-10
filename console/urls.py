@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from angel.views import login, home, logout
+from console.views import login, home, logout
 
 admin.autodiscover()
 urlpatterns = patterns('',
