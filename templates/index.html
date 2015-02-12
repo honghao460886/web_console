@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include 'head-template.html' %}
+{% include 'header.html' %}
 
 <body>
 
 <div id="wrapper">
 
     <!-- Navigation -->
-    {% include 'nav-template.html' %}
+    {% include 'nav.html' %}
+    {% if user.is_authenticated %}
+        {% include 'page-wrapper.html' %}
+    {% endif %}
     <!-- /#page-wrapper -->
 
 </div>
@@ -17,11 +20,7 @@
             {{ error }}, please return home page, login again！<a href="/">Home</a>
     </h1>
 {% else %}
-    {% if user.is_authenticated %}
-        <h1 class="navbar-brand" style="color:white">
-            欢迎，{{ user.username }}。 谢谢您得访问。
-        </h1>
-    {% else %}
+    {% if not user.is_authenticated %}
         <div style="height: 80px"></div>
         <!-- /#wrapper -->
         <div class="col-md-4"></div>
