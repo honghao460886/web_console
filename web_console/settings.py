@@ -1,5 +1,5 @@
 """
-Django settings for console project.
+Django settings for web_console project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/

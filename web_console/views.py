@@ -16,16 +16,27 @@ def home(request):
 
 def login(request):
     username = request.POST.get('username')
+    print username
+    if username is None or username == '':
+        t = get_template("index.html")
+        error = "用户名不能为空，请输入用户名！"
+        c = RequestContext(request, {'error': error})
+        return HttpResponse(t.render(c), {"error": error})
     password = request.POST.get('password')
+    if password is None or password == '':
+        t = get_template("index.html")
+        error = "密码不能为空，请输入密码！"
+        c = RequestContext(request, {'error': error})
+        return HttpResponse(t.render(c), {"error": error})
     user = authenticate(username=username, password=password)
     if user is not None:
         t = get_template("index.html")
         c = RequestContext(request, {'user': user})
         user_login(request, user)
         return HttpResponse(t.render(c))
-    else:
+    else :
         t = get_template("index.html")
-        error = "username or password error!"
+        error = "用户名或密码输入错误！"
         c = RequestContext(request, {'error': error})
         return HttpResponse(t.render(c), {"error": error})
 

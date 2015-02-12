@@ -17,9 +17,9 @@ Credit: www.cssmoban.com
 /* 1. General
 --------------------------------------------*/
 
-*, body {
-    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+/**, body {*/
+    /*font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+/*}*/
 
 body {
     margin-bottom: 30px;
@@ -164,11 +164,11 @@ h2 {
     line-height: 34px;
 }
 
-.fa {
+.fat {
     font-size: 16px;
 }
 
-.fa.login-with {
+.fat.login-with {
     font-size: 30px;
     margin: 0 5px;
 }
