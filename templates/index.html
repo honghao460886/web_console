@@ -17,7 +17,8 @@
 </div>
 {% if error %}
     <h1 class="navbar-brand" style="color:white">
-            {{ error }}, please return home page, login again！<a href="/">Home</a>
+        {{ error }}, 请返回登录页面，重新登录
+        <a href="/">返回</a>
     </h1>
 {% else %}
     {% if not user.is_authenticated %}
@@ -27,6 +28,7 @@
 
         <div class="col-md-4">
             <h1 class="margin-bottom-15" style="color:yellowgreen">Login MQS</h1>
+
             <form class="form-horizontal margin-bottom-30" role="form" action="/user/login/" method="post">
                 {% csrf_token %}
                 <div class="form-group">
