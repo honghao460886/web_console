@@ -1,0 +1,63 @@
+<!-- /.row -->
+<div class="row">
+    {% for broker in broker_list %}
+        {% if broker.broker_stat == 'red' %}
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-{{ broker.broker_stat }}">
+                    <div class="panel-heading">
+                        <div class="row" data-toggle="modal" onclick="show_broker_details('{{ broker.broker_stat }}', '{{ broker.broker_name }}');">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="middle">{{ broker.broker_name }}</div>
+                                <div>
+                                    Broken
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% for broker in broker_list %}
+        {% if broker.broker_stat == 'green' %}
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-{{ broker.broker_stat }}">
+                    <div class="panel-heading">
+                        <div class="row" data-toggle="modal" onclick="show_broker_details('{{ broker.broker_stat }}', '{{ broker.broker_name }}');">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="middle">{{ broker.broker_name }}</div>
+                                <div>
+                                    Running
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+</div>
+<!-- /.row -->

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 {% include 'header.html' %}
-
 <body>
+{% include 'broker-modal.html' %}
 <div id="wrapper">
-
     <!-- Navigation -->
     {% include 'nav.html' %}
     {% if user.is_authenticated %}
-        {% include 'page-wrapper.html' %}
+        {% if broker_list %}
+            {% include 'page-wrapper.html' %}
+        {% else %}
+            <h1 align="center" class="col-md-12 navbar-brand" style="color:white">
+                Welcome to MQS Management Platform
+            </h1>
+        {% endif %}
     {% endif %}
     <!-- /#page-wrapper -->
 </div>
@@ -24,5 +28,4 @@
     {% endif %}
 {% endif %}
 </body>
-
 </html>

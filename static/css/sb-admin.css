@@ -169,6 +169,10 @@ ul.alert-dropdown {
     font-size: 40px;
 }
 
+.middle {
+    font-size: 30px;
+}
+
 .panel-green {
     border-color: #5cb85c;
 }

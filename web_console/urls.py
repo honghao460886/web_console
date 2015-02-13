@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from web_console.views import login, home, logout
+from web_console.views import login, home, logout, get_broker_list
 
 admin.autodiscover()
 urlpatterns = patterns('',
@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^$', home),
     (r'^user/login/$', login),
-    (r'^user/logout/$', logout)
+    (r'^user/logout/$', logout),
+    (r'^action/get_broker_list/$', get_broker_list),
 )
 urlpatterns += staticfiles_urlpatterns()
